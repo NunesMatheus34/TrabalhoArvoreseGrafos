@@ -1,0 +1,16 @@
+import networkx as nx 
+
+G = nx.Graph()
+
+G.add_edge("A", "B", weight=1)
+G.add_edge("A", "C", weight=4)
+G.add_edge("B", "D", weight=2)
+G.add_edge("C", "D", weight=2)
+G.add_edge("C", "E", weight=3)
+G.add_edge("D", "E", weight=3)
+
+caminho = nx.dijkstra_path(G, source="D", target="A", weight="weight")
+distancia = nx.dijkstra_path_length(G, source="D", target="A", weight="weight")
+
+print("Menor caminho:", caminho)
+print("Distancia total:", distancia, "km")
